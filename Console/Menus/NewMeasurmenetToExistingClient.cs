@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace QFAMCT_HSZF_2024251.Console.Menus
 {
-    internal class NewMeasurmenetToExistingClient
+    internal class NewMeasurmenetToExistingClient : Menu
     {
+        protected override void SelectOption()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

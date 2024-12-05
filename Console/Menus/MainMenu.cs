@@ -11,7 +11,6 @@ namespace QFAMCT_HSZF_2024251.Console.Menus
     {
         public int SelectedOption { get; set; }
         public string[] Options { get; set; }
-        public Menu NextMenu { get; set; }
 
         public MainMenu()
         {
@@ -44,9 +43,10 @@ namespace QFAMCT_HSZF_2024251.Console.Menus
             switch (SelectedOption)
             {
                 case 0:
-                    NextMenu = new LoadInFromJson();
+                    new LoadInFromJson();
                     break;
                 case 1:
+                    new AddToDatabase();
                     break;
                 case 2:
                     break;

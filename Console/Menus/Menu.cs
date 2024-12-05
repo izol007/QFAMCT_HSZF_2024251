@@ -14,7 +14,6 @@ namespace QFAMCT_HSZF_2024251.Console.Menus
         }
         public string[] Options { get; set; }
         public int SelectedOption { get; set; }
-        public Menu NextMenu { get; set; }
         protected abstract void SelectOption();
         public static int LoadOptions(string[] options, int startRow = 0)
         {

@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace QFAMCT_HSZF_2024251.Console.Menus
 {
-    internal class Statistics
+    internal class Statistics : Menu
     {
+        protected override void SelectOption()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

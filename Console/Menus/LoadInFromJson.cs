@@ -9,7 +9,6 @@ namespace QFAMCT_HSZF_2024251.Console.Menus
     internal class LoadInFromJson : Menu
     {
         public string[] Options { get; set; }
-        public int SelectedOption { get; set; }
         public Menu NextMenu { get; set; }
 
         public LoadInFromJson()
@@ -26,7 +25,7 @@ namespace QFAMCT_HSZF_2024251.Console.Menus
                 case 0:
                     break;
                 case 1:
-                    NextMenu = new MainMenu();
+                    new MainMenu();
                     break;
             }
         }
