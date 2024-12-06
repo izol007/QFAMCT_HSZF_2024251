@@ -1,16 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace QFAMCT_HSZF_2024251.Console.Menus
+﻿namespace QFAMCT_HSZF_2024251.Console.Menus
 {
     internal class AddToDatabase : Menu
     {
-        protected override void Next()
+        public AddToDatabase(Hosting host) : base(host)
         {
-            throw new NotImplementedException();
+            optionsStartIndex = 3;
+            System.Console.WriteLine("Here you MUST PROVIDE the necessary informations!");
+            
+        }
+
+        protected override void Next(Hosting host)
+        {
         }
     }
 }

@@ -15,7 +15,7 @@ namespace QFAMCT_HSZF_2024251.Console
             Menu menu;
             do
             {
-                menu = new MainMenu();
+                menu = new MainMenu(hosting);
             } while (!menu.Exit);
         }
     }

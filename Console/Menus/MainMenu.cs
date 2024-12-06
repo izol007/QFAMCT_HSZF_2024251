@@ -10,9 +10,7 @@ namespace QFAMCT_HSZF_2024251.Console.Menus
 {
     internal class MainMenu : Menu
     {
-        public string[] Options { get; set; }
-
-        public MainMenu() : base()
+        public MainMenu(Hosting hosting) : base(hosting)
         {
             optionsStartIndex = 9;
             base.Options = new string[]{
@@ -26,7 +24,7 @@ namespace QFAMCT_HSZF_2024251.Console.Menus
             };
             Exit = false;
             RezsiText();
-            Next();
+            Next(hosting);
         }
 
         void RezsiText()
@@ -40,27 +38,27 @@ namespace QFAMCT_HSZF_2024251.Console.Menus
             System.Console.ForegroundColor = ConsoleColor.White;
         }
 
-        protected override void Next()
+        protected override void Next(Hosting host)
         {
             switch (SelectedOption)
             {
                 case 0:
-                    new LoadInFromJson();
+                    new LoadInFromJson(host);
                     break;
                 case 1:
-                    new AddToDatabase();
+                    new AddToDatabase(host);
                     break;
                 case 2:
-                    new AlterDatabase();
+                    new AlterDatabase(host);
                     break;
                 case 3:
-                    new NewMeasurmenetToExistingClient();
+                    new NewMeasurmenetToExistingClient(host);
                     break;
                 case 4:
-                    new ListClients();
+                    new ListClients(host);
                     break;
                 case 5:
-                    new Statistics();
+                    new Statistics(host);
                     break;
                 case 6:
                     Exit = true;

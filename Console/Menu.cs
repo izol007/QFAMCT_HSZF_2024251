@@ -11,7 +11,7 @@ namespace QFAMCT_HSZF_2024251.Console
     {
         protected int optionsStartIndex = 0;
         internal bool Exit { get; set; }
-        protected Menu()
+        protected Menu(Hosting host)
         {
             System.Console.Clear();
         }
@@ -21,7 +21,7 @@ namespace QFAMCT_HSZF_2024251.Console
             get { return LoadOptions(Options, optionsStartIndex); }
             set { value = 0; }
         }
-        protected abstract void Next();
+        protected abstract void Next(Hosting host);
         protected static int LoadOptions(string[] options, int startRow = 0)
         {
             System.Console.BackgroundColor = ConsoleColor.Black;

@@ -1,0 +1,111 @@
+{
+  "Clients": [
+    {
+        "ClientName": "Varga László",
+        "ClientAddress": "1123 Budapest, Váci út 14.",
+        "Measurements": [
+            {
+                "Consumption": 150.0,
+                "MeterCount": 800,
+                "Date": "2024-09-05T10:00:00Z",
+                "GovernmentAid": true
+            },
+            {
+                "Consumption": 130.6,
+                "MeterCount": 801,
+                "Date": "2024-10-05T14:00:00Z",
+                "GovernmentAid": false
+            }
+        ]
+    },
+    {
+        "ClientName": "Kiss Katalin",
+        "ClientAddress": "6000 Kecskemét, Széchenyi tér 1.",
+        "Measurements": [
+            {
+                "Consumption": 75.2,
+                "MeterCount": 900,
+                "Date": "2024-09-12T09:30:00Z",
+                "GovernmentAid": false
+            },
+            {
+                "Consumption": 85.0,
+                "MeterCount": 901,
+                "Date": "2024-10-12T11:15:00Z",
+                "GovernmentAid": true
+            }
+        ]
+    },
+    {
+        "ClientName": "Nagy Péter",
+        "ClientAddress": "2230 Gyömrő, Fő utca 25.",
+        "Measurements": [
+            {
+                "Consumption": 95.5,
+                "MeterCount": 1201,
+                "Date": "2024-09-25T08:45:00Z",
+                "GovernmentAid": true
+            },
+            {
+                "Consumption": 88.3,
+                "MeterCount": 1202,
+                "Date": "2024-10-25T16:30:00Z",
+                "GovernmentAid": false
+            }
+        ]
+    },
+    {
+        "ClientName": "Molnár Zsuzsanna",
+        "ClientAddress": "2014 Kispest, Kossuth Lajos utca 10.",
+        "Measurements": [
+            {
+                "Consumption": 160.0,
+                "MeterCount": 1100,
+                "Date": "2024-09-20T12:00:00Z",
+                "GovernmentAid": false
+            },
+            {
+                "Consumption": 120.4,
+                "MeterCount": 1101,
+                "Date": "2024-10-20T15:45:00Z",
+                "GovernmentAid": true
+            }
+        ]
+    },
+    {
+        "ClientName": "Farkas Gábor",
+        "ClientAddress": "6724 Szeged, Lónyay utca 5.",
+        "Measurements": [
+            {
+                "Consumption": 210.3,
+                "MeterCount": 1300,
+                "Date": "2024-08-30T10:30:00Z",
+                "GovernmentAid": true
+            },
+            {
+                "Consumption": 195.5,
+                "MeterCount": 1301,
+                "Date": "2024-10-30T14:12:00Z",
+                "GovernmentAid": false
+            }
+        ]
+    },
+    {
+      "ClientName": "Kup Ica",
+      "ClientAddress": "5600 Békéscsaba, Munkácsy Mihály utca 14.",
+      "Measurements": [
+        {
+          "Consumption": 110.9,
+          "MeterCount": 1500,
+          "Date": "2024-09-14T13:10:00Z",
+          "GovernmentAid": false
+        },
+        {
+          "Consumption": 125.3,
+          "MeterCount": 1501,
+          "Date": "2024-10-14T15:20:00Z",
+          "GovernmentAid": true
+        }
+      ]
+    }
+]}

@@ -8,7 +8,15 @@ namespace QFAMCT_HSZF_2024251.Console.Menus
 {
     internal class NewMeasurmenetToExistingClient : Menu
     {
-        protected override void Next()
+        public NewMeasurmenetToExistingClient(Hosting host) : base(host)
+        {
+            optionsStartIndex = 3;
+            System.Console.WriteLine();
+            Options = new string[] { };
+            Next(host);
+        }
+
+        protected override void Next(Hosting host)
         {
             throw new NotImplementedException();
         }

@@ -10,6 +10,7 @@ namespace QFAMCT_HSZF_2024251.MsSql
         void DeleteById(int id);
         Measurement GetById(int id);
         IEnumerable<Measurement> GetAll();
+        IEnumerable<Measurement> GetAllForClient(int ClientID);
     }
     public class MeasurementDataProvider : IMeasurementDataProvider
     {
@@ -52,6 +53,15 @@ namespace QFAMCT_HSZF_2024251.MsSql
             Measurement newMeasurement = measurement;
             newMeasurement.MeasurementID = id;
             context.Measurements.Add(newMeasurement);
+        }
+
+        public IEnumerable<Measurement> GetAllForClient(int ClientID)
+        {
+            Client? ThisClient = context.Clients.Find(ClientID);
+            if (ThisClient == null)
+                throw new Exception("Client not found");
+            else
+                return ThisClient.Measurements;
         }
     }
 }

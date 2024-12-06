@@ -1,5 +1,9 @@
-﻿using QFAMCT_HSZF_2024251.Model;
+﻿using Microsoft.EntityFrameworkCore.Storage.Json;
+using Newtonsoft.Json;
+using QFAMCT_HSZF_2024251.Model;
 using QFAMCT_HSZF_2024251.Persistence.MsSql;
+using System.Reflection;
+using System.Text.Json.Serialization;
 
 namespace QFAMCT_HSZF_2024251.Application
 {
@@ -13,6 +17,7 @@ namespace QFAMCT_HSZF_2024251.Application
         void ModifyClient(int ClientId, Client Client);
         void RemoveClient(int id);
         void ImportClients(string path);
+        static public PropertyInfo[] Properties { get; }
     }
     public class ClientService : IClientService
     {
@@ -25,9 +30,17 @@ namespace QFAMCT_HSZF_2024251.Application
 
         public int Count { get { return clientDataProvider.Count; } }
 
+        static public IEnumerable<PropertyInfo> Properties { 
+            get 
+            {
+                PropertyInfo[] props1 = typeof(Client).GetProperties();
+                return props1.Union(MeasurementService.Properties);
+            } 
+        }
+
         public void AddClient(Client client)
         {
-            clientDataProvider.Add(client);
+            clientDataProvider.AddOrUpdate(client);
         }
 
         public bool Exists(int id)
@@ -47,12 +60,12 @@ namespace QFAMCT_HSZF_2024251.Application
 
         public void ImportClients(string path)
         {
-            throw new NotImplementedException();
+            AddAll(JsonConvert.DeserializeObject<ClientList>(File.ReadAllText(path+".json")).Clients);
         }
 
         public void ModifyClient(int ClientId, Client Client)
         {
-            throw new NotImplementedException();
+            clientDataProvider.Update(ClientId,Client);
         }
 
         public void RemoveClient(int id)
@@ -60,6 +73,12 @@ namespace QFAMCT_HSZF_2024251.Application
             clientDataProvider.DeleteById(id);
         }
 
-
+        void AddAll(List<Client> clientList)
+        {
+            foreach (Client client in clientList)
+            {
+                clientDataProvider.AddOrUpdate(client);
+            }
+        }
     }
 }

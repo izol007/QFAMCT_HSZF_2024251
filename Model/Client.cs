@@ -42,7 +42,7 @@ namespace QFAMCT_HSZF_2024251.Model
         public bool GovernmentAid { get; set; }
         public override string ToString()
         {
-            return $"Date of measurement: {Date.ToString()}\tConsumption: {Consumption}\tMeter count: {MeterCount}\tGevernemnt Aid: {GovernmentAid}";
+            return $"Date of measurement: {Date.ToString()}\tConsumption: {Consumption:f1}\tMeter count: {MeterCount}\tGevernemnt Aid: {GovernmentAid}";
         }
     }
     public class ClientList

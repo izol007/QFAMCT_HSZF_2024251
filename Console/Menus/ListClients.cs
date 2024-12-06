@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore.Metadata.Conventions;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,9 +9,31 @@ namespace QFAMCT_HSZF_2024251.Console.Menus
 {
     internal class ListClients : Menu
     {
-        protected override void Next()
+        public ListClients(Hosting host) : base(host)
         {
-            throw new NotImplementedException();
+            optionsStartIndex = 3;
+            System.Console.WriteLine("What do you need exactly?");
+            Options = new string[] { "List them ALL!!!", "List only some of them (I will tell which)","SH!T, GO BACK!"};
+            Next(host);
+        }
+
+        protected override void Next(Hosting host)
+        {
+            switch (SelectedOption)
+            {
+                case 0:
+                    System.Console.Clear();
+                    foreach (var item in host.clientService.GetAllClients())
+                    {
+                        System.Console.WriteLine(item);
+                    }
+                    System.Console.ReadLine();
+                    break;
+                case 1:
+                    break;
+                case 2:
+                    break;
+            }
         }
     }
 }

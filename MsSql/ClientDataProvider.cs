@@ -7,7 +7,7 @@ namespace QFAMCT_HSZF_2024251.Persistence.MsSql
     {
         public int Count { get; }
         bool Exists(int id);
-        void Add(Client client);
+        void AddOrUpdate(Client client);
         void Update(int clientId, Client client);
         void DeleteById(int id);
         Client GetById(int id);
@@ -25,18 +25,34 @@ namespace QFAMCT_HSZF_2024251.Persistence.MsSql
 
         public int Count { get { return context.Clients.Count(); } }
 
-        public void Add(Client client)
+        public void AddOrUpdate(Client client)
         {
-            if (context.Clients.Where(x=>x.ClientName == client.ClientName && x.ClientAddress == client.ClientAddress).Count()==0)
+            var oldClient = Existing(client);
+            if (oldClient != null)
+                foreach (var item in client.Measurements)
+                {
+                    oldClient.Measurements.Add(item);
+                }
+            else
+                context.Clients.Add(client);
+            context.SaveChanges();
+        }
+
+        Client? Existing(Client client)
+        {
+            foreach (var item in context.Clients)
             {
-                context.Clients.Where(x => x.ClientName == client.ClientName && x.ClientAddress == client.ClientAddress).First().Measurements.Concat(client.Measurements);
+                if (item.ClientAddress==client.ClientAddress&&item.ClientName==client.ClientName)
+                {
+                    return item;
+                }
             }
-            else context.Clients.Add(client);
+            return null;
         }
 
         public void DeleteById(int id)
         {
-            context.Remove(context.Clients.First(x=>x.ClientID==id));
+            context.Remove(context.Clients.Find(id));
         }
 
         public bool Exists(int id)

@@ -1,0 +1,166 @@
+{
+  "Clients": [
+    {
+      "ClientName": "Lakatos Brendon",
+      "ClientAddress": "1083 Budapest, Diószegi Sámuel utca 12.",
+      "Measurements": [
+        {
+          "Consumption": 50.2,
+          "MeterCount": 832,
+          "Date": "2024-07-31T00:00:00Z",
+          "GovernmentAid": true
+        },
+        {
+          "Consumption": 65.2,
+          "MeterCount": 855,
+          "Date": "2024-08-31T20:00:00Z",
+          "GovernmentAid": true
+        }
+      ]
+    },
+    {
+      "ClientName": "Bartos Cs. István",
+      "CLientAddress": "4564 Dinnyés, Csilágháború köz 3.",
+      "Measurements": [
+        {
+          "Consumption": 150.2,
+          "MeterCount": 1855,
+          "Date": "2024-08-31T20:00:00Z",
+          "GovernmentAid": false
+        }
+      ]
+    },
+    {
+      "ClientName": "Kovács Anna",
+      "ClientAddress": "1025 Budapest, Kapy utca 7.",
+      "Measurements": [
+        {
+          "Consumption": 80.5,
+          "MeterCount": 902,
+          "Date": "2024-09-30T00:00:00Z",
+          "GovernmentAid": true
+        },
+        {
+          "Consumption": 70.3,
+          "MeterCount": 910,
+          "Date": "2024-10-31T20:00:00Z",
+          "GovernmentAid": false
+        }
+      ]
+    },
+    {
+      "ClientName": "Németh János",
+      "ClientAddress": "2030 Érd, Tisza utca 5.",
+      "Measurements": [
+        {
+          "Consumption": 120.0,
+          "MeterCount": 1450,
+          "Date": "2024-09-15T15:00:00Z",
+          "GovernmentAid": false
+        },
+        {
+          "Consumption": 95.8,
+          "MeterCount": 1451,
+          "Date": "2024-10-15T10:00:00Z",
+          "GovernmentAid": true
+        }
+      ]
+    },
+    {
+      "ClientName": "Tóth Eszter",
+      "ClientAddress": "1091 Budapest, Hortobágy utca 4.",
+      "Measurements": [
+        {
+          "Consumption": 200.1,
+          "MeterCount": 1200,
+          "Date": "2024-08-10T12:00:00Z",
+          "GovernmentAid": true
+        },
+        {
+          "Consumption": 165.4,
+          "MeterCount": 1250,
+          "Date": "2024-10-10T18:30:00Z",
+          "GovernmentAid": false
+        }
+      ]
+    },
+    {
+      "ClientName": "Horváth Zsolt",
+      "ClientAddress": "1013 Budapest, Batthyány tér 5.",
+      "Measurements": [
+        {
+          "Consumption": 85.8,
+          "MeterCount": 670,
+          "Date": "2024-08-15T09:00:00Z",
+          "GovernmentAid": false
+        },
+        {
+          "Consumption": 95.1,
+          "MeterCount": 680,
+          "Date": "2024-09-15T17:30:00Z",
+          "GovernmentAid": true
+        }
+      ]
+    },
+    {
+      "ClientName": "Pintér Dóra",
+      "ClientAddress": "6725 Szeged, Jókai utca 3.",
+      "Measurements": [
+        {
+          "Consumption": 100.7,
+          "MeterCount": 410,
+          "Date": "2024-08-20T11:00:00Z",
+          "GovernmentAid": true
+        },
+        {
+          "Consumption": 110.4,
+          "MeterCount": 420,
+          "Date": "2024-09-20T14:00:00Z",
+          "GovernmentAid": false
+        }
+      ]
+    },
+    {
+      "ClientName": "Balogh Máté",
+      "ClientAddress": "6033 Hódmezővásárhely, Széchenyi utca 10.",
+      "Measurements": [
+        {
+          "Consumption": 130.6,
+          "MeterCount": 314,
+          "Date": "2024-09-10T10:15:00Z",
+          "GovernmentAid": false
+        },
+        {
+          "Consumption": 145.2,
+          "MeterCount": 315,
+          "Date": "2024-10-10T13:00:00Z",
+          "GovernmentAid": true
+        }
+      ]
+    },
+    {
+      "ClientName": "Kup Ica",
+      "ClientAddress": "5600 Békéscsaba, Munkácsy Mihály utca 14.",
+      "Measurements": [
+        {
+          "Consumption": 72.3,
+          "MeterCount": 210,
+          "Date": "2024-09-02T12:20:00Z",
+          "GovernmentAid": true
+        },
+        {
+          "Consumption": 89.5,
+          "MeterCount": 220,
+          "Date": "2024-10-02T16:45:00Z",
+          "GovernmentAid": false
+        },
+        {
+          "Consumption": 100.3,
+          "MeterCount": 200,
+          "Date": "2024-09-02T12:40:00Z",
+          "GovernmentAid": true
+        }
+      ]
+    }
+  ]
+}
