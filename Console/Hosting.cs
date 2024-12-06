@@ -18,6 +18,7 @@ namespace QFAMCT_HSZF_2024251.Console
                 services.AddSingleton<IClientDataProvider, ClientDataProvider>();
                 services.AddSingleton<IClientService, ClientService>();
                 services.AddSingleton<IMeasurementDataProvider, MeasurementDataProvider>();
+                services.AddSingleton<IMeasurementService, MeasurementService>();
             }
            ).Build();
             host.Start();

@@ -4,9 +4,12 @@ using System.Text.Json.Serialization;
 
 namespace QFAMCT_HSZF_2024251.Model
 {
+    [AttributeUsage(AttributeTargets.Property)]
+    public class HiddenPropertyAttribute : Attribute { }
+
     public class Client
     {
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity),HiddenProperty]
         public int ClientID { get; set; }
         [Required]
         public string ClientName { get; set; }
@@ -31,10 +34,10 @@ namespace QFAMCT_HSZF_2024251.Model
     }
     public class Measurement
     {
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity),HiddenProperty]
         public int MeasurementID { get; set; }
 
-        [JsonIgnore, ForeignKey("ClientID")]
+        [JsonIgnore, ForeignKey("ClientID"),HiddenProperty]
         public int ClientID { get; set; }
         public double Consumption { get; set; }
         public int MeterCount { get; set; }

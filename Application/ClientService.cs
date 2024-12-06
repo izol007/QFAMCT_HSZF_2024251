@@ -17,7 +17,8 @@ namespace QFAMCT_HSZF_2024251.Application
         void ModifyClient(int ClientId, Client Client);
         void RemoveClient(int id);
         void ImportClients(string path);
-        static public PropertyInfo[] Properties { get; }
+        static public IEnumerable<PropertyInfo> AllProperties { get; }
+        static public IEnumerable<PropertyInfo> ClientProperties { get; }
     }
     public class ClientService : IClientService
     {
@@ -30,12 +31,20 @@ namespace QFAMCT_HSZF_2024251.Application
 
         public int Count { get { return clientDataProvider.Count; } }
 
-        static public IEnumerable<PropertyInfo> Properties { 
+        static public IEnumerable<PropertyInfo> AllProperties { 
             get 
             {
-                PropertyInfo[] props1 = typeof(Client).GetProperties();
-                return props1.Union(MeasurementService.Properties);
+                IEnumerable<PropertyInfo> props1 = ClientProperties;
+                return props1.Union(MeasurementService.MeasurementProperties);
             } 
+        }
+
+        static public IEnumerable<PropertyInfo> ClientProperties
+        {
+            get
+            {
+                return typeof(Client).GetProperties().Where(x => !Attribute.IsDefined(x, typeof(HiddenPropertyAttribute)));
+            }
         }
 
         public void AddClient(Client client)

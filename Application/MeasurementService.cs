@@ -1,11 +1,6 @@
 ﻿using QFAMCT_HSZF_2024251.Model;
 using QFAMCT_HSZF_2024251.MsSql;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace QFAMCT_HSZF_2024251.Application
 {
@@ -20,10 +15,10 @@ namespace QFAMCT_HSZF_2024251.Application
         void ModifyMeasurement(int MeasurementId, Measurement measurement);
         void RemoveMeasurement(int id);
         void ImportMeasurement(string path);
-        static public PropertyInfo[] Properties { get; }
+        static public IEnumerable<PropertyInfo> MeasurementProperties { get; }
 
     }
-    internal class MeasurementService : IMeasurementService
+    public class MeasurementService : IMeasurementService
     {
         private readonly MeasurementDataProvider measurementDataProvider;
 
@@ -34,7 +29,7 @@ namespace QFAMCT_HSZF_2024251.Application
 
         public int Count => measurementDataProvider.Count;
 
-        static public PropertyInfo[] Properties => typeof(Measurement).GetProperties();
+        static public IEnumerable<PropertyInfo> MeasurementProperties => typeof(Measurement).GetProperties().Where(x=>!Attribute.IsDefined(x,typeof(HiddenPropertyAttribute)));
 
         public void AddMeasurement(Measurement measurement)
         {
