@@ -9,7 +9,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Application\QFAMCT_HSZF_2024251.Application.csproj" />
     <ProjectReference Include="..\Model\QFAMCT_HSZF_2024251.Model.csproj" />
-    <ProjectReference Include="..\MsSql\QFAMCT_HSZF_2024251.MsSql.csproj" />
+    <ProjectReference Include="..\MsSql\QFAMCT_HSZF_2024251.Persistence.MsSql.csproj" />
   </ItemGroup>
 
 </Project>

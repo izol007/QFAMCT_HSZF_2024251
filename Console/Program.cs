@@ -11,21 +11,12 @@ namespace QFAMCT_HSZF_2024251.Console
     {
         static void Main(string[] args)
         {
-            var host = Host.CreateDefaultBuilder().ConfigureServices((hostContext, services) =>
+            Hosting hosting = new Hosting();
+            Menu menu;
+            do
             {
-                services.AddScoped<AppDbContext>();
-                services.AddSingleton<IClientDataProvider, ClientDataProvider>();
-                services.AddSingleton<IClientService, ClientService>();
-                services.AddSingleton<IMeasurementDataProvider, MeasurementDataProvider>();
-            }
-            ).Build();
-            host.Start();
-
-            using IServiceScope serviceScope = host.Services.CreateScope();
-            IClientService clientService = host.Services.GetRequiredService<IClientService>();
-
-            System.Console.Clear();
-            Menu menu = new MainMenu();
+                menu = new MainMenu();
+            } while (!menu.Exit);
         }
     }
 }

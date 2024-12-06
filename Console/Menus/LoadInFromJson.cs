@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QFAMCT_HSZF_2024251.Application;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,23 +10,25 @@ namespace QFAMCT_HSZF_2024251.Console.Menus
     internal class LoadInFromJson : Menu
     {
         public string[] Options { get; set; }
-        public Menu NextMenu { get; set; }
 
         public LoadInFromJson()
         {
+            optionsStartIndex = 3;
             System.Console.WriteLine("Greetings, fellow REZSI enjoyer!\nName your business!\n");
-            Options = new string[] { "Add name of JSON file", "Back" };
-            SelectOption();
+            base.Options = new string[] { "Add name of JSON file", "Back" };
+            Next();
         }
-        protected override void SelectOption()
+        
+
+        protected override void Next()
         {
-            SelectedOption = LoadOptions(Options,3);
             switch (SelectedOption)
             {
                 case 0:
+                    System.Console.WriteLine("\n\nHand it over. That thing, your dark json.");
+                    string filename = System.Console.ReadLine();
                     break;
                 case 1:
-                    new MainMenu();
                     break;
             }
         }

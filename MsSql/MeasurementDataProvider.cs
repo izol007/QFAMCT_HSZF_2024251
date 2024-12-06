@@ -1,10 +1,4 @@
 ﻿using QFAMCT_HSZF_2024251.Model;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace QFAMCT_HSZF_2024251.MsSql
 {
     public interface IMeasurementDataProvider

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QFAMCT_HSZF_2024251.Application;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,13 +10,12 @@ namespace QFAMCT_HSZF_2024251.Console.Menus
 {
     internal class MainMenu : Menu
     {
-        public int SelectedOption { get; set; }
         public string[] Options { get; set; }
 
-        public MainMenu()
+        public MainMenu() : base()
         {
-            SelectedOption = 0; 
-            Options = new string[]{
+            optionsStartIndex = 9;
+            base.Options = new string[]{
                 "Load in JSON files",
             "Add to the database",
             "Alter in database",
@@ -24,10 +24,12 @@ namespace QFAMCT_HSZF_2024251.Console.Menus
             "View Statistics",
             "Exit"
             };
-            Rezsi();
-            SelectOption();
+            Exit = false;
+            RezsiText();
+            Next();
         }
-        static void Rezsi()
+
+        void RezsiText()
         {
             System.Console.WriteLine("RRR                       III\t|\nR  R  EEEEE  ZZZZZ   SSSS  I\t|\nR R   E         Z   S      I\t|\nRR    EEEE    zZz    SSS   I\t|\nR R   E       Z         S  I\t|\nR  R  EEEEE  ZZZZZ  SSSS  III\t|\n");
 
@@ -37,9 +39,9 @@ namespace QFAMCT_HSZF_2024251.Console.Menus
             System.Console.BackgroundColor = ConsoleColor.Black;
             System.Console.ForegroundColor = ConsoleColor.White;
         }
-        protected override void SelectOption()
+
+        protected override void Next()
         {
-            SelectedOption = LoadOptions(Options, 9);
             switch (SelectedOption)
             {
                 case 0:
@@ -49,14 +51,21 @@ namespace QFAMCT_HSZF_2024251.Console.Menus
                     new AddToDatabase();
                     break;
                 case 2:
+                    new AlterDatabase();
                     break;
                 case 3:
+                    new NewMeasurmenetToExistingClient();
                     break;
                 case 4:
+                    new ListClients();
                     break;
                 case 5:
+                    new Statistics();
                     break;
                 case 6:
+                    Exit = true;
+                    break;
+                default:
                     break;
             }
         }

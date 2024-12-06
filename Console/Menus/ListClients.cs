@@ -8,7 +8,7 @@ namespace QFAMCT_HSZF_2024251.Console.Menus
 {
     internal class ListClients : Menu
     {
-        protected override void SelectOption()
+        protected override void Next()
         {
             throw new NotImplementedException();
         }
