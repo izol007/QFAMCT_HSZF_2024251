@@ -1,5 +1,5 @@
 ﻿using QFAMCT_HSZF_2024251.Model;
-namespace QFAMCT_HSZF_2024251.MsSql
+namespace QFAMCT_HSZF_2024251.Persistence.MsSql
 {
     public interface IMeasurementDataProvider
     {
@@ -55,11 +55,11 @@ namespace QFAMCT_HSZF_2024251.MsSql
             context.Measurements.Add(newMeasurement);
         }
 
-        public IEnumerable<Measurement> GetAllForClient(int ClientID)
+        public IEnumerable<Measurement>? GetAllForClient(int ClientID)
         {
             Client? ThisClient = context.Clients.Find(ClientID);
             if (ThisClient == null)
-                throw new Exception("Client not found");
+                return null;
             else
                 return ThisClient.Measurements;
         }

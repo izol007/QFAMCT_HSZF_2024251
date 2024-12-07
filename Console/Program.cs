@@ -1,9 +1,4 @@
-﻿using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
-using QFAMCT_HSZF_2024251.Application;
-using QFAMCT_HSZF_2024251.Console.Menus;
-using QFAMCT_HSZF_2024251.MsSql;
-using QFAMCT_HSZF_2024251.Persistence.MsSql;
+﻿using QFAMCT_HSZF_2024251.Console.Menus;
 
 namespace QFAMCT_HSZF_2024251.Console
 {

@@ -1,19 +1,18 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using QFAMCT_HSZF_2024251.Application;
-using QFAMCT_HSZF_2024251.MsSql;
 using QFAMCT_HSZF_2024251.Persistence.MsSql;
 
 
 namespace QFAMCT_HSZF_2024251.Console
 {
-    internal class Hosting
+    public class Hosting
     {
         internal IClientService clientService;
         internal IMeasurementService measurementService;
         public Hosting()
         {
-            var host = Host.CreateDefaultBuilder().ConfigureServices((hostContext, services) =>
+            IHost host = Host.CreateDefaultBuilder().ConfigureServices((hostContext, services) =>
             {
                 services.AddScoped<AppDbContext>();
                 services.AddSingleton<IClientDataProvider, ClientDataProvider>();

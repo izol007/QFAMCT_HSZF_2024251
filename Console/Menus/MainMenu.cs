@@ -16,7 +16,6 @@ namespace QFAMCT_HSZF_2024251.Console.Menus
             base.Options = new string[]{
                 "Load in JSON files",
             "Add to the database",
-            "New Measurement to existing client",
             "List clients",
             "View Statistics",
             "Exit"
@@ -48,15 +47,12 @@ namespace QFAMCT_HSZF_2024251.Console.Menus
                     new AddToDatabase(host); //don
                     break;
                 case 2:
-                    new NewMeasurmenetToExistingClient(host);
-                    break;
-                case 3:
                     new ListClients(host); //partially don
                     break;
-                case 4:
+                case 3:
                     new Statistics(host);
                     break;
-                case 5:
+                case 4:
                     Exit = true;
                     break;
                 default:

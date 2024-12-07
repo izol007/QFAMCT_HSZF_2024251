@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore.Metadata.Conventions;
+using Microsoft.Extensions.Hosting;
 using QFAMCT_HSZF_2024251.Model;
 using System;
 using System.Collections.Generic;
@@ -60,18 +61,23 @@ namespace QFAMCT_HSZF_2024251.Console.Menus
                             client.ClientAddress = Options[0];
                             break;
                         case 2:
-                            System.Console.Clear();
-                            List<string> l = new List<string>();
-                            foreach (var item in host.measurementService.GetAllMeasurementsForClient(selectedClientId))
-                            {
-                                l.Concat(item.ToString().Split('\t'));
-                            }
-                            Options = l.ToArray();
-                            select = SelectedOption;
+                            ListMeasurements(host.clientService.GetAllMeasurementsForClient(selectedClientId));
                             break;
                     }
                     host.clientService.ModifyClient(selectedClientId,client);
                 }
+            }
+            void ListMeasurements(IEnumerable<Measurement> measurements)
+            {
+                Options = new string[] { "New Measurement" };
+                System.Console.Clear();
+                List<string> l = new List<string>();
+                foreach (var item in measurements)
+                {
+                    l.Concat(item.ToString().Split('\t'));
+                }
+                Options.Concat(l.ToArray());
+                int select = SelectedOption;
             }
         }
     }

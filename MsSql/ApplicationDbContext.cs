@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using QFAMCT_HSZF_2024251.Model;
 
-namespace QFAMCT_HSZF_2024251.MsSql
+namespace QFAMCT_HSZF_2024251.Persistence.MsSql
 {
     public class AppDbContext : DbContext
     {

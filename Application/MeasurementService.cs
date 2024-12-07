@@ -1,5 +1,5 @@
 ﻿using QFAMCT_HSZF_2024251.Model;
-using QFAMCT_HSZF_2024251.MsSql;
+using QFAMCT_HSZF_2024251.Persistence.MsSql;
 using System.Reflection;
 
 namespace QFAMCT_HSZF_2024251.Application
@@ -11,10 +11,8 @@ namespace QFAMCT_HSZF_2024251.Application
         void AddMeasurement(Measurement measurement);
         Measurement FindMeasurementById(int id);
         IEnumerable<Measurement> GetAllMeasurements();
-        IEnumerable<Measurement> GetAllMeasurementsForClient(int ClientID);
         void ModifyMeasurement(int MeasurementId, Measurement measurement);
         void RemoveMeasurement(int id);
-        void ImportMeasurement(string path);
         static public IEnumerable<PropertyInfo> MeasurementProperties { get; }
 
     }
@@ -51,24 +49,14 @@ namespace QFAMCT_HSZF_2024251.Application
             return measurementDataProvider.GetAll();
         }
 
-        public IEnumerable<Measurement> GetAllMeasurementsForClient(int ClientID)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void ImportMeasurement(string path)
-        {
-            throw new NotImplementedException();
-        }
-
         public void ModifyMeasurement(int MeasurementId, Measurement measurement)
         {
-            throw new NotImplementedException();
+            measurementDataProvider.Update(MeasurementId,measurement);
         }
 
         public void RemoveMeasurement(int id)
         {
-            throw new NotImplementedException();
+            measurementDataProvider.DeleteById(id);
         }
     }
 }

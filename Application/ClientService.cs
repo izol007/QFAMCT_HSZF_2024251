@@ -17,6 +17,7 @@ namespace QFAMCT_HSZF_2024251.Application
         void ModifyClient(int ClientId, Client Client);
         void RemoveClient(int id);
         void ImportClients(string path);
+        IEnumerable<Measurement> GetAllMeasurementsForClient(int ClientID);
         static public IEnumerable<PropertyInfo> AllProperties { get; }
         static public IEnumerable<PropertyInfo> ClientProperties { get; }
     }
@@ -88,6 +89,11 @@ namespace QFAMCT_HSZF_2024251.Application
             {
                 clientDataProvider.AddOrUpdate(client);
             }
+        }
+
+        public IEnumerable<Measurement> GetAllMeasurementsForClient(int ClientID)
+        {
+            return clientDataProvider.GetById(ClientID).Measurements;
         }
     }
 }
