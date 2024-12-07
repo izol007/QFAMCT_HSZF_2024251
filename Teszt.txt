@@ -1,0 +1,156 @@
+1083 Budapest, Diószegi Sámuel utca 12.	Lakatos Brendon
+Number of Measurements:	2
+Average consumption:	57,7
+Not supported consumptions:
+
+Date of measurement: 2024. 07. 31. 0:00:00	Consumption: 50,2	Meter count: 832	Gevernemnt Aid: True
+Date of measurement: 2024. 08. 31. 20:00:00	Consumption: 65,2	Meter count: 855	Gevernemnt Aid: True
+
+
+
+
+4564 Dinnyés, Csilágháború köz 3.	Bartos Cs. István
+Number of Measurements:	1
+Average consumption:	150,2
+Not supported consumptions:
+
+Date of measurement: 2024. 08. 31. 20:00:00	Consumption: 150,2	Meter count: 1855	Gevernemnt Aid: False
+
+
+
+
+1025 Budapest, Kapy utca 7.	Kovács Anna
+Number of Measurements:	2
+Average consumption:	75,4
+Not supported consumptions:
+
+Date of measurement: 2024. 09. 30. 0:00:00	Consumption: 80,5	Meter count: 902	Gevernemnt Aid: True
+Date of measurement: 2024. 10. 31. 20:00:00	Consumption: 70,3	Meter count: 910	Gevernemnt Aid: False
+
+
+
+
+2030 Érd, Tisza utca 5.	Németh János
+Number of Measurements:	2
+Average consumption:	107,9
+Not supported consumptions:
+
+Date of measurement: 2024. 09. 15. 15:00:00	Consumption: 120,0	Meter count: 1450	Gevernemnt Aid: False
+Date of measurement: 2024. 10. 15. 10:00:00	Consumption: 95,8	Meter count: 1451	Gevernemnt Aid: True
+
+
+
+
+1091 Budapest, Hortobágy utca 4.	Tóth Eszter
+Number of Measurements:	2
+Average consumption:	182,75
+Not supported consumptions:
+
+Date of measurement: 2024. 08. 10. 12:00:00	Consumption: 200,1	Meter count: 1200	Gevernemnt Aid: True
+Date of measurement: 2024. 10. 10. 18:30:00	Consumption: 165,4	Meter count: 1250	Gevernemnt Aid: False
+
+
+
+
+1013 Budapest, Batthyány tér 5.	Horváth Zsolt
+Number of Measurements:	2
+Average consumption:	90,44999999999999
+Not supported consumptions:
+
+Date of measurement: 2024. 08. 15. 9:00:00	Consumption: 85,8	Meter count: 670	Gevernemnt Aid: False
+Date of measurement: 2024. 09. 15. 17:30:00	Consumption: 95,1	Meter count: 680	Gevernemnt Aid: True
+
+
+
+
+6725 Szeged, Jókai utca 3.	Pintér Dóra
+Number of Measurements:	2
+Average consumption:	105,55000000000001
+Not supported consumptions:
+
+Date of measurement: 2024. 08. 20. 11:00:00	Consumption: 100,7	Meter count: 410	Gevernemnt Aid: True
+Date of measurement: 2024. 09. 20. 14:00:00	Consumption: 110,4	Meter count: 420	Gevernemnt Aid: False
+
+
+
+
+6033 Hódmezővásárhely, Széchenyi utca 10.	Balogh Máté
+Number of Measurements:	2
+Average consumption:	137,89999999999998
+Not supported consumptions:
+
+Date of measurement: 2024. 09. 10. 10:15:00	Consumption: 130,6	Meter count: 314	Gevernemnt Aid: False
+Date of measurement: 2024. 10. 10. 13:00:00	Consumption: 145,2	Meter count: 315	Gevernemnt Aid: True
+
+
+
+
+5600 Békéscsaba, Munkácsy Mihály utca 14.	Kup Ica
+Number of Measurements:	5
+Average consumption:	98,8
+Not supported consumptions:
+
+Date of measurement: 2024. 09. 02. 12:20:00	Consumption: 72,3	Meter count: 210	Gevernemnt Aid: True
+Date of measurement: 2024. 10. 02. 16:45:00	Consumption: 89,5	Meter count: 220	Gevernemnt Aid: False
+Date of measurement: 2024. 09. 02. 12:40:00	Consumption: 100,3	Meter count: 200	Gevernemnt Aid: True
+Date of measurement: 2024. 09. 14. 13:10:00	Consumption: 110,9	Meter count: 1500	Gevernemnt Aid: False
+Date of measurement: 2024. 10. 14. 15:20:00	Consumption: 125,3	Meter count: 1501	Gevernemnt Aid: True
+
+
+
+
+1123 Budapest, Váci út 14.	Varga László
+Number of Measurements:	2
+Average consumption:	140,3
+Not supported consumptions:
+
+Date of measurement: 2024. 09. 05. 10:00:00	Consumption: 150,0	Meter count: 800	Gevernemnt Aid: True
+Date of measurement: 2024. 10. 05. 14:00:00	Consumption: 130,6	Meter count: 801	Gevernemnt Aid: False
+
+
+
+
+6000 Kecskemét, Széchenyi tér 1.	Kiss Katalin
+Number of Measurements:	2
+Average consumption:	80,1
+Not supported consumptions:
+
+Date of measurement: 2024. 09. 12. 9:30:00	Consumption: 75,2	Meter count: 900	Gevernemnt Aid: False
+Date of measurement: 2024. 10. 12. 11:15:00	Consumption: 85,0	Meter count: 901	Gevernemnt Aid: True
+
+
+
+
+2230 Gyömrő, Fő utca 25.	Nagy Péter
+Number of Measurements:	2
+Average consumption:	91,9
+Not supported consumptions:
+
+Date of measurement: 2024. 09. 25. 8:45:00	Consumption: 95,5	Meter count: 1201	Gevernemnt Aid: True
+Date of measurement: 2024. 10. 25. 16:30:00	Consumption: 88,3	Meter count: 1202	Gevernemnt Aid: False
+
+
+
+
+2014 Kispest, Kossuth Lajos utca 10.	Molnár Zsuzsanna
+Number of Measurements:	2
+Average consumption:	140,2
+Not supported consumptions:
+
+Date of measurement: 2024. 09. 20. 12:00:00	Consumption: 160,0	Meter count: 1100	Gevernemnt Aid: False
+Date of measurement: 2024. 10. 20. 15:45:00	Consumption: 120,4	Meter count: 1101	Gevernemnt Aid: True
+
+
+
+
+6724 Szeged, Lónyay utca 5.	Farkas Gábor
+Number of Measurements:	2
+Average consumption:	202,9
+Not supported consumptions:
+
+Date of measurement: 2024. 08. 30. 10:30:00	Consumption: 210,3	Meter count: 1300	Gevernemnt Aid: True
+Date of measurement: 2024. 10. 30. 14:12:00	Consumption: 195,5	Meter count: 1301	Gevernemnt Aid: False
+
+
+
+

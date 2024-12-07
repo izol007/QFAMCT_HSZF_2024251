@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,7 +19,10 @@ namespace QFAMCT_HSZF_2024251.Console.Menus
 
         protected override void Next(Hosting host)
         {
-            throw new NotImplementedException();
+            List<string> writeContent = host.clientService.Statistics();
+            System.Console.Write("Name the output file:\t");
+            string fileName = System.Console.ReadLine();
+            File.WriteAllLines(Path.Combine(@"..\..\..\..\", fileName+".txt"), writeContent);
         }
     }
 }

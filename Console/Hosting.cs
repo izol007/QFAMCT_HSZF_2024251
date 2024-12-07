@@ -23,8 +23,9 @@ namespace QFAMCT_HSZF_2024251.Console
            ).Build();
             host.Start();
             using IServiceScope serviceScope = host.Services.CreateScope();
-            clientService = host.Services.GetRequiredService<IClientService>();
-            measurementService = host.Services.GetRequiredService<IMeasurementService>();
+            IServiceProvider serviceProvider = serviceScope.ServiceProvider;
+            clientService = serviceProvider.GetRequiredService<IClientService>();
+            //measurementService = serviceProvider.GetRequiredService<IMeasurementService>();
         }
     }
 }

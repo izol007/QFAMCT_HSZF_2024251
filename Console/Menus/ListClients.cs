@@ -44,11 +44,12 @@ namespace QFAMCT_HSZF_2024251.Console.Menus
                 Options = new string[] {"Exit\n"}.Concat(ListedItems).ToArray();
                 System.Console.Clear();
                 int select = SelectedOption;
-                int selectedClientId = int.Parse(ListedItems[select].Split('\n')[0].Split('\t')[0]);
                 if (select>0)
                 {
+                    select--;
+                    int selectedClientId = int.Parse(ListedItems[select].Split('\n')[0].Split('\t')[0]);
                     System.Console.Clear();
-                    Options = ListedItems[select - 1].Split('\n')[0].Split('\t').Skip(1).Concat(new List<string> { "Measurements" }).ToArray();
+                    Options = ListedItems[select].Split('\n')[0].Split('\t').Skip(1).Concat(new List<string> { "Measurements" }).ToArray();
                     Client client = new Client();
                     switch (SelectedOption)
                     {

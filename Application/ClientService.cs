@@ -17,7 +17,8 @@ namespace QFAMCT_HSZF_2024251.Application
         void ModifyClient(int ClientId, Client Client);
         void RemoveClient(int id);
         void ImportClients(string path);
-        IEnumerable<Measurement> GetAllMeasurementsForClient(int ClientID);
+        List<string> Statistics();
+        HashSet<Measurement> GetAllMeasurementsForClient(int ClientID);
         static public IEnumerable<PropertyInfo> AllProperties { get; }
         static public IEnumerable<PropertyInfo> ClientProperties { get; }
     }
@@ -91,9 +92,25 @@ namespace QFAMCT_HSZF_2024251.Application
             }
         }
 
-        public IEnumerable<Measurement> GetAllMeasurementsForClient(int ClientID)
+        public HashSet<Measurement> GetAllMeasurementsForClient(int ClientID)
         {
-            return clientDataProvider.GetById(ClientID).Measurements;
+            return clientDataProvider.GetById(ClientID).Measurements.ToHashSet();
+        }
+
+        public List<string> Statistics()
+        {
+            List<string> strings = new List<string>();
+            foreach (var item in clientDataProvider.GetAll())
+            {
+                string toAdd = $"{item.ClientAddress}\t{item.ClientName}\nNumber of Measurements:\t{clientDataProvider.NumberOfMeasurementsForClient(item.ClientID)}\nAverage consumption:\t{clientDataProvider.AverageConsumption(item.ClientID)}\nNot supported consumptions:\n\n";
+                foreach (var notSupported in clientDataProvider.MoreConsumedThanSupported(item.ClientID))
+                {
+                    toAdd +=notSupported.ToString()+"\n";
+                }
+                toAdd += "\n\n\n";
+                strings.Add(toAdd);
+            }
+            return strings;
         }
     }
 }

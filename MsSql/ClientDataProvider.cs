@@ -11,6 +11,9 @@ namespace QFAMCT_HSZF_2024251.Persistence.MsSql
         void DeleteById(int id);
         Client GetById(int id);
         IEnumerable<Client> GetAll();
+        int NumberOfMeasurementsForClient(int ClientID);
+        double AverageConsumption(int ClientID);
+        HashSet<Measurement> MoreConsumedThanSupported(int ClientID);
 
         delegate void NewPeakHandler(Client client, int consumption); //!!!
     }
@@ -73,6 +76,24 @@ namespace QFAMCT_HSZF_2024251.Persistence.MsSql
         {
             context.Clients.Find(clientId).ClientName = client.ClientName;
             context.Clients.Find(clientId).ClientAddress = client.ClientAddress;
+        }
+
+
+        public int NumberOfMeasurementsForClient(int ClientID)
+        {
+            return GetById(ClientID).Measurements.Count();
+        }
+
+        public double AverageConsumption(int ClientID)
+        {
+            Measurement minMeasurement = GetById(ClientID).Measurements.OrderByDescending(x => x.Consumption).Last();
+            Measurement maxMeasurement = GetById(ClientID).Measurements.OrderByDescending(x => x.Consumption).First();
+            return (minMeasurement.Consumption + maxMeasurement.Consumption) / 2;
+        }
+
+        public HashSet<Measurement> MoreConsumedThanSupported(int ClientID)
+        {
+            return GetById(ClientID).Measurements.Where(x => x.Consumption > 50).ToHashSet();
         }
     }
 }
