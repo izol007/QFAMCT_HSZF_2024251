@@ -1,11 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore.Metadata.Conventions;
-using Microsoft.Extensions.Hosting;
+﻿using QFAMCT_HSZF_2024251.Application;
 using QFAMCT_HSZF_2024251.Model;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Net.Http.Headers;
+using System.Reflection;
 
 namespace QFAMCT_HSZF_2024251.Console.Menus
 {
@@ -33,11 +29,28 @@ namespace QFAMCT_HSZF_2024251.Console.Menus
                     Listed(ListedItems);
                     break;
                 case 1:
+                    System.Console.Clear();
+                    Client client = new Client();
+                    List<string> ListToList = new List<string>();
+                    foreach (var item in ClientService.ClientProperties)
+                    {
+                        if (!(item.PropertyType != typeof(string) && typeof(IEnumerable<Measurement>).IsAssignableFrom(item.PropertyType)))
+                        {
+                            System.Console.Write(item.Name + ":\t");
+                            item.SetValue(client, System.Console.ReadLine());
+                        }
+                    }
+                    //ListToList.Add(host.clientService.IdentifyClient(client.ClientAddress, client.ClientName).ToString());
+                            
+                     foreach (var item in host.clientService.SimilarClients(client))
+                     {
+                        ListToList.Add(item.ToString());
+                     }
+                    Listed(ListToList);
                     break;
                 case 2:
                     break;
             }
-
             void Listed(List<string> ListedItems)
             {
                 optionsStartIndex = 0;
@@ -70,14 +83,17 @@ namespace QFAMCT_HSZF_2024251.Console.Menus
             }
             void ListMeasurements(IEnumerable<Measurement> measurements)
             {
-                Options = new string[] { "New Measurement" };
-                System.Console.Clear();
                 List<string> l = new List<string>();
+                l.Add("New Measurement\n");
+                System.Console.Clear();
                 foreach (var item in measurements)
                 {
-                    l.Concat(item.ToString().Split('\t'));
+                    foreach (var data in item.ToString().Split('\t'))
+                    {
+                        l.Add(data);
+                    }
                 }
-                Options.Concat(l.ToArray());
+                Options = l.ToArray();
                 int select = SelectedOption;
             }
         }

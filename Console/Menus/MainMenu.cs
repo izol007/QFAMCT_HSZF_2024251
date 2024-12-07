@@ -50,7 +50,7 @@ namespace QFAMCT_HSZF_2024251.Console.Menus
                     new ListClients(host); //partially don
                     break;
                 case 3:
-                    new Statistics(host);
+                    new Statistics(host); //don
                     break;
                 case 4:
                     Exit = true;

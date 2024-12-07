@@ -27,7 +27,7 @@ namespace QFAMCT_HSZF_2024251.Application
 
         public int Count => measurementDataProvider.Count;
 
-        static public IEnumerable<PropertyInfo> MeasurementProperties => typeof(Measurement).GetProperties().Where(x=>!Attribute.IsDefined(x,typeof(HiddenPropertyAttribute)));
+        static public IEnumerable<PropertyInfo> MeasurementProperties => typeof(Measurement).GetProperties().Where(x => !Attribute.IsDefined(x, typeof(HiddenPropertyAttribute)));
 
         public void AddMeasurement(Measurement measurement)
         {
@@ -51,7 +51,7 @@ namespace QFAMCT_HSZF_2024251.Application
 
         public void ModifyMeasurement(int MeasurementId, Measurement measurement)
         {
-            measurementDataProvider.Update(MeasurementId,measurement);
+            measurementDataProvider.Update(MeasurementId, measurement);
         }
 
         public void RemoveMeasurement(int id)

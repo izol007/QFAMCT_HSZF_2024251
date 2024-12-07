@@ -9,7 +9,6 @@ namespace QFAMCT_HSZF_2024251.Console
     public class Hosting
     {
         internal IClientService clientService;
-        internal IMeasurementService measurementService;
         public Hosting()
         {
             IHost host = Host.CreateDefaultBuilder().ConfigureServices((hostContext, services) =>
@@ -17,15 +16,12 @@ namespace QFAMCT_HSZF_2024251.Console
                 services.AddScoped<AppDbContext>();
                 services.AddSingleton<IClientDataProvider, ClientDataProvider>();
                 services.AddSingleton<IClientService, ClientService>();
-                services.AddSingleton<IMeasurementDataProvider, MeasurementDataProvider>();
-                services.AddSingleton<IMeasurementService, MeasurementService>();
             }
            ).Build();
             host.Start();
             using IServiceScope serviceScope = host.Services.CreateScope();
             IServiceProvider serviceProvider = serviceScope.ServiceProvider;
             clientService = serviceProvider.GetRequiredService<IClientService>();
-            //measurementService = serviceProvider.GetRequiredService<IMeasurementService>();
         }
     }
 }
