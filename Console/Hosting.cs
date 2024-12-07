@@ -10,6 +10,7 @@ namespace QFAMCT_HSZF_2024251.Console
     internal class Hosting
     {
         internal IClientService clientService;
+        internal IMeasurementService measurementService;
         public Hosting()
         {
             var host = Host.CreateDefaultBuilder().ConfigureServices((hostContext, services) =>
@@ -24,6 +25,7 @@ namespace QFAMCT_HSZF_2024251.Console
             host.Start();
             using IServiceScope serviceScope = host.Services.CreateScope();
             clientService = host.Services.GetRequiredService<IClientService>();
+            measurementService = host.Services.GetRequiredService<IMeasurementService>();
         }
     }
 }

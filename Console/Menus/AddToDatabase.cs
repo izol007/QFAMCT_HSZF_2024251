@@ -18,7 +18,7 @@ namespace QFAMCT_HSZF_2024251.Console.Menus
                 {
                     foreach (PropertyInfo measurementProp in MeasurementService.MeasurementProperties)
                     {
-                        System.Console.WriteLine(measurementProp.Name + ":\t");
+                        System.Console.Write(measurementProp.Name + ":\t");
                         Type type = measurementProp.GetType();
                         if (measurementProp.PropertyType==typeof(string))
                         {
@@ -42,7 +42,7 @@ namespace QFAMCT_HSZF_2024251.Console.Menus
                 }
                 else
                 {
-                    System.Console.WriteLine(item.Name + ":\t");
+                    System.Console.Write(item.Name + ":\t");
                     item.SetValue(client, System.Console.ReadLine());
                 }
             }

@@ -23,7 +23,7 @@ namespace QFAMCT_HSZF_2024251.Model
         }
         public override string ToString()
         {
-            string clientData = $"{ClientAddress}\t\t{ClientName}";
+            string clientData = $"{ClientID}\t{ClientAddress}\t{ClientName}";
             string measurementsData = "\n";
             foreach (var item in Measurements)
             {
